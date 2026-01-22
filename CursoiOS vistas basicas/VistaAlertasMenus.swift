@@ -67,7 +67,7 @@ struct VistaAlertasMenus: View {
             } label: {
                 Label("Colorea de rojo", systemImage: "paintbrush")
             }
-            Button{
+            Button {
                 colorRectangulo = .green
             } label: {
                 Label("Colorea de verde", systemImage: "leaf")
@@ -76,11 +76,21 @@ struct VistaAlertasMenus: View {
         Rectangle()
             .fill(colorRectangulo)
             .frame(width: 50, height: 50)
-        
-        Menu("Toca para ver opciones"){
-            Button("Editar", systemImage: "pencil"){
+
+        Menu("Toca para ver opciones") {
+            Button("Editar", systemImage: "pencil") {
+                //Código para editar
+            }
+            Button("Duplicar", systemImage: "plus.square.on.square") {
+                // Código para duplicar
+            }
+            Divider()  //Podemos poner separadores para visualizar y separar los botones
+            Button("Eliminar", systemImage: "trash", role: .destructive) {
+                //Código para eliminar
+
             }
         }
+        .menuOrder(.fixed)
     }
 }
 func aceptar() {
